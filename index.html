@@ -57,9 +57,6 @@
         .arrow-indicator::after {
             content: '';
             position: absolute;
-            right: 0.5rem;
-            top: 50%;
-            transform: translateY(-50%) rotate(0deg);
             width: 1.5rem;
             height: 1.5rem;
             background: #6C2BD9;
@@ -74,11 +71,17 @@
             }
         }
         @media (min-width: 1024px) {
-            .arrow-indicator::after {
+            .arrow-indicator--right::after {
                 right: 0.5rem;
                 top: 50%;
                 left: auto;
                 transform: translateY(-50%) rotate(0deg);
+            }
+            .arrow-indicator--left::after {
+                left: 0.5rem;
+                top: 50%;
+                right: auto;
+                transform: translateY(-50%) rotate(180deg);
             }
         }
 
@@ -135,7 +138,7 @@
                     </ul>
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxUwUFt16qBkQe-1TADnKkk62tz4DFwCLmsaF_JEOFinjWog/viewform" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">Restez informés</a>
                 </div>
-                <img class="w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/fleurs.jpg" alt="Exemple d'urbanisme moderne">
+                <img class="w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/bruges.jpg" alt="Exemple d'urbanisme moderne">
             </div>
         </div>
     </section>
@@ -173,7 +176,10 @@
                     </ul>
                     <p class="mb-8 font-light lg:text-xl">En rendant la ville plus accessible à vélo, nous permettrons aux citoyens de profiter pleinement des commerces locaux et des attraits naturels tout en réduisant leur dépendance à l'automobile.</p>
                 </div>
-                <img class="w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/velo-sansdroits.jpg" alt="Vue de la piste cyclable de Coteau-du-Lac">
+                <div class="flex flex-col items-start lg:items-center lg:col-start-2">
+                    <img class="order-2 w-full mb-4 rounded-lg lg:order-1" src="./images/velo-sansdroits.jpg" alt="Vue de la piste cyclable de Coteau-du-Lac">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxUwUFt16qBkQe-1TADnKkk62tz4DFwCLmsaF_JEOFinjWog/viewform" class="order-1 lg:order-2 self-start inline-block text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-3 lg:mt-3 lg:mb-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">J'ai des idées</a>
+                </div>
             </div>
         </div>
     </section>
@@ -217,6 +223,9 @@
                     </ul>
                     <p class="font-light lg:text-xl">En combinant développement urbain intelligent et soutien aux entreprises, nous pouvons créer un cercle vertueux où commerces locaux et résidents prospèrent ensemble.</p>
                 </div>
+                <div class="lg:col-start-1 lg:row-start-2 lg:justify-self-end mt-3 lg:-mt-12">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxUwUFt16qBkQe-1TADnKkk62tz4DFwCLmsaF_JEOFinjWog/viewform" class="inline-block text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">J'ai des idées</a>
+                </div>
             </div>
         </div>
       </section>
@@ -228,15 +237,27 @@
                 <img class="mx-auto max-w-xs lg:max-w-sm" src="images/spotted.png" alt="Bonjour, je suis à la recherche d'une colocation à Coteau-du-Lac, je travaille chez FedEx à partir du mois prochain et je ne suis pas véhiculé. Un logement à proximité me fera plaisir.">
                 <div class="flex flex-col items-center lg:flex-row lg:items-center">
                   <!-- Arrow (up on mobile, left on desktop) -->
-                  <div class="mb-2 lg:mb-0 lg:mr-3 rotate-[0] lg:rotate-180">
-                    <div class="arrow-indicator bg-white border-0" style="width: 2.5rem; height: 2.5rem; position: relative; display: flex; align-items: center; justify-content: center;">
-                      <!-- The arrow shape, using a pseudo-element in CSS -->
-                    </div>
+                  <div class="mb-2 lg:mb-0 lg:mr-3">
+                    <div class="arrow-indicator arrow-indicator--left bg-white border-0" style="width: 2.5rem; height: 2.5rem; position: relative; display: flex; align-items: center; justify-content: center;"></div>
                   </div>
                   <span class="border-2 border-purple-700 rounded-lg px-4 py-2 text-gray-800 bg-white font-medium text-sm shadow text-center lg:text-left" style="min-width: 220px;">C'est des petites actions faciles qui vont aider des travailleurs comme lui</span>
                 </div>
             </figure>
             
+        </div>
+      </section>
+      <section class="bg-white dark:bg-gray-900">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-24 lg:px-6">
+            <figure class="max-w-screen-md mx-auto flex flex-col items-center lg:flex-row-reverse lg:items-center lg:justify-center gap-4 lg:gap-8">
+                <img class="mx-auto max-w-xs lg:max-w-sm" src="images/drame.png" alt="Exemple de situation problématique – illustration d'un drame à éviter.">
+                <div class="flex flex-col items-center lg:flex-row lg:items-center">
+                  <!-- Arrow (up on mobile, right on desktop) -->
+                  <span class="border-2 border-purple-700 rounded-lg px-4 py-2 text-gray-800 bg-white font-medium text-sm shadow text-center lg:text-left" style="min-width: 220px;">Et éviter des drames comme lui</span>
+                  <div class="order-first mb-2 lg:order-none lg:mb-0 lg:ml-3">
+                      <div class="arrow-indicator arrow-indicator--right bg-white border-0" style="width: 2.5rem; height: 2.5rem; position: relative; display: flex; align-items: center; justify-content: center;"></div>
+                  </div>
+                </div>
+            </figure>
         </div>
       </section>
     <!-- End block -->
@@ -248,20 +269,6 @@
                 <h2 class="mt-3 mb-4 text-3xl font-extrabold tracking-tight text-gray-900 md:text-3xl dark:text-white">Mais ça va être laid!</h2>
                 <p class="mb-6 font-light text-gray-500 sm:text-xl dark:text-gray-400">La crise du logement touche tout le Québec, et notre région n’y échappe pas. La MRC de Vaudreuil-Soulanges nous demande d’atteindre des objectifs clairs de densité — dans notre cas, 20 logements par hectare — afin de contribuer à répondre aux besoins en habitation. Dans ce contexte, <b class="font-bold">la véritable question n’est pas de savoir si nous allons réaliser des projets résidentiels : c’est une obligation à laquelle nous devons nous conformer.</b> Ce qui est entre nos mains, c’est de décider où ces projets auront lieu et comment ils seront réalisés. Nous voulons saisir cette occasion pour planifier un développement qui respecte notre identité villageoise, qui s’intègre harmonieusement à notre territoire et qui contribue à offrir des logements de qualité aux familles, aux aînés et aux jeunes de notre communauté.</p>
                 <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Contrairement à ce qui s’est fait à Saint-Zotique, où de grandes tours à condos ont été construites sans réelle intégration au paysage et à l’identité locale, la densification à Coteau-du-Lac peut prendre une tout autre forme. Il est important de réfléchir collectivement à des solutions qui respecteront le caractère humain de la ville et préserveront son identité. La croissance peut se faire de façon harmonieuse, à une échelle adaptée à l’environnement et aux besoins de la communauté. La densification ne doit pas être synonyme de bétonnage brutal : elle peut devenir un projet commun de développement réfléchi, qui permettra de répondre aux défis d’aujourd’hui sans sacrifier l’âme du milieu de vie. <b class="font-bold">Chaque voix compte pour imaginer ce que pourrait être ce développement.</b></p>
-                <div class="pt-6 mt-6 space-y-4 border-t border-gray-200 dark:border-gray-700">
-                    <div>
-                      <a href="#" class="inline-flex items-center text-base font-medium text-purple-600 hover:text-purple-800 dark:text-purple-500 dark:hover:text-purple-700">
-                        Explore Legality Guide
-                        <svg class="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                      </a>
-                    </div>
-                    <div>
-                      <a href="#" class="inline-flex items-center text-base font-medium text-purple-600 hover:text-purple-800 dark:text-purple-500 dark:hover:text-purple-700">
-                          Visit the Trust Center
-                          <svg class="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                      </a>
-                      </div>
-                </div>
             </div>
             <div class="space-y-8 md:grid md:grid-cols-2 md:gap-x-12 md:gap-y-6 md:space-y-0">
                 <div>
@@ -291,7 +298,7 @@
     <!-- Start block -->
     <section class="bg-white dark:bg-gray-900">
         <div class="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-24 lg:px-6 ">
-            <h2 class="mb-6 text-3xl font-extrabold tracking-tight text-center text-gray-900 lg:mb-8 lg:text-3xl dark:text-white">Foire aux questions</h2>
+            <h2 class="pt-12 mb-6 text-3xl font-extrabold tracking-tight text-center text-gray-900 lg:mb-8 lg:text-3xl dark:text-white">Foire aux questions</h2>
             <div class="max-w-screen-md mx-auto">
                 <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
                     <h3 id="accordion-flush-heading-2">
