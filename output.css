@@ -1889,6 +1889,10 @@ input:checked + .toggle-bg {
     margin-right: 0.5rem;
   }
 
+  .sm\:hidden {
+    display: none;
+  }
+
   .sm\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
