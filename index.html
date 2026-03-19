@@ -28,8 +28,7 @@
     </style>
 </head>
 <body>
-    <style>@media (min-width: 1024px) { #mobile-menu, #menu-toggle { display: none !important; } }</style>
-<header class="fixed w-full z-30">
+    <header class="fixed w-full z-30">
     <nav class="bg-white border-gray-200 dark:bg-gray-900 shadow-md">
         <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto py-2">
             <a href="index.html" class="flex items-center">
@@ -45,15 +44,14 @@
             </button>
         </div>
     </nav>
-    <div id="mobile-menu" class="lg:!hidden">
+    <div id="mobile-menu">
         <div id="drawer-backdrop" class="fixed inset-0 bg-black/50 z-40 opacity-0 invisible transition-all duration-300" aria-hidden="true"></div>
-        <div id="drawer" class="fixed top-0 right-0 h-full w-72 max-w-[85vw] bg-white dark:bg-gray-900 shadow-xl z-50 transform translate-x-full transition-transform duration-300 ease-out" aria-hidden="true">
+        <div id="drawer" class="fixed top-0 right-0 h-full w-72 max-w-[85vw] bg-white dark:bg-gray-900 shadow-xl z-50 transition-transform duration-300 ease-out" style="transform: translateX(100%);" aria-hidden="true">
         <div class="flex flex-col h-full pt-16 px-6 pb-6">
             <button type="button" id="drawer-close" class="absolute top-4 right-4 p-2 rounded-lg text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700" aria-label="Fermer le menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
             <nav class="flex flex-col gap-4">
-                <a href="index.html" class="text-gray-700 hover:text-purple-600 dark:text-gray-300 dark:hover:text-purple-400 font-medium text-lg py-2">Accueil</a>
                 <a href="plateforme.html" class="text-gray-700 hover:text-purple-600 dark:text-gray-300 dark:hover:text-purple-400 font-medium text-lg py-2">Plateforme électorale</a>
                 <a href="nouvelles.html" class="text-gray-700 hover:text-purple-600 dark:text-gray-300 dark:hover:text-purple-400 font-medium text-lg py-2">Nouvelles et Publications</a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxUwUFt16qBkQe-1TADnKkk62tz4DFwCLmsaF_JEOFinjWog/viewform" class="text-white bg-purple-700 hover:bg-purple-800 font-medium rounded-lg text-sm px-4 py-3 text-center mt-4 dark:bg-purple-600 dark:hover:bg-purple-700">Participez à la discussion</a>
@@ -68,14 +66,14 @@
             var backdrop = document.getElementById('drawer-backdrop');
             var closeBtn = document.getElementById('drawer-close');
             function openDrawer() {
-                drawer.classList.remove('translate-x-full');
+                drawer.style.transform = 'translateX(0)';
                 drawer.setAttribute('aria-hidden', 'false');
                 backdrop.classList.remove('opacity-0', 'invisible');
                 backdrop.setAttribute('aria-hidden', 'false');
                 document.body.style.overflow = 'hidden';
             }
             function closeDrawer() {
-                drawer.classList.add('translate-x-full');
+                drawer.style.transform = 'translateX(100%)';
                 drawer.setAttribute('aria-hidden', 'true');
                 backdrop.classList.add('opacity-0', 'invisible');
                 backdrop.setAttribute('aria-hidden', 'true');

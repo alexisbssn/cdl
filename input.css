@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Menu mobile : masqué sur desktop, ne prend pas d'espace sur mobile */
+@media (min-width: 1024px) {
+  #mobile-menu, #menu-toggle { display: none !important; }
+}
+#mobile-menu {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+#mobile-menu > * {
+  pointer-events: auto;
+}
