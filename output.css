@@ -2189,6 +2189,10 @@ input:checked + .toggle-bg {
     display: none;
   }
 
+  .lg\:\!hidden {
+    display: none !important;
+  }
+
   .lg\:max-w-sm {
     max-width: 24rem;
   }
