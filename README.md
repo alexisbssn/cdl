@@ -1,51 +1,41 @@
-## [Landwind - Tailwind CSS Landing Page](https://demo.themesberg.com/landwind/)
+# Bâtir ensemble le Coteau-du-Lac de demain
 
-<a href="https://demo.themesberg.com/landwind/" rel="Tailwind CSS Landing Page">![Tailwind CSS Landing Page Demo - Flowbite](https://themesberg.s3.us-east-2.amazonaws.com/public/github/landwind/thumbnail.png)</a>
+Site web sur l'urbanisme et le développement à Coteau-du-Lac, construit avec Tailwind CSS et Flowbite.
 
-Landwind is a free and open-source landing page built for SaaS and product websites based on the Tailwind CSS utility-first framework and the Flowbite Component Library featuring a hero section, customer logos, feature sections, testimonials, pricing cards, FAQ section, pre-footer CTA button and a footer.
+## Structure du projet
 
-Built with ❤️ by [Themesberg](https://themesberg.com) based on Tailwind CSS and Flowbite.
+- **`src/`** – Fichiers sources HTML (à éditer uniquement ; avec placeholder pour le header)
+- **`includes/`** – Composants réutilisables (header)
+- **`images/`** – Images et assets
+- **`index.html`**, **`plateforme.html`**, **`nouvelles.html`**, **`nouvelles/`** – Fichiers générés par le build (ne pas modifier directement)
 
-## Live preview
+## Démarrage
 
-Check out a live demo by clicking here:
+1. Installer les dépendances : `npm install`
 
-🔗 [Landwind live preview](https://demo.themesberg.com/landwind/) (🌗 switch on dark mode using your computer preferences)
+2. Développement (Tailwind + watch + serveur local sur http://localhost:3000) :
+   ```
+   npm run dev
+   ```
+   Ouvrir soit http://localhost:3000 ou /index.html dans le navigateur. Les fichiers fonctionnent en local (file://) grâce aux chemins relatifs.
 
-## Getting started
+3. Build unique (avant déploiement) :
+   ```
+   npm run build
+   ```
 
-Make sure that you have [Node.js](https://nodejs.org/en/), [Tailwind CSS](https://tailwindcss.com/docs/installation) and [Flowbite](https://flowbite.com/docs/getting-started/quickstart/) installed.
+## Déploiement
 
-1. Run `npm install` inside your terminal
+Après `npm run build`, déployer les fichiers générés à la racine :
+- `index.html`, `plateforme.html`, `nouvelles.html`
+- `nouvelles/` (dossier avec les articles)
+- `output.css`, `images/`, favicons, etc.
 
-2. Watch for files and compile Tailwind CSS + Flowbite:
+## Technologies
 
-```
-npx tailwindcss -i ./input.css -o ./output.css --watch
-```
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Flowbite](https://flowbite.com/docs/getting-started/introduction/)
 
-3. To deploy you will only need the `index.html` file and the `output.css` styles.
+## Licence
 
-Alternatively you can also just directly copy this code into your own projects, whether you use Laravel, React, Vue.js or other frameworks.
-
-## Figma design file
-
-We have also built a free Figma design file that you can duplicate from the community website:
-
-👉 [Landwind - Figma Landing Page](https://www.figma.com/community/file/1125744163617429490)
-
-## Built with Tailwind CSS and Flowbite
-
-This landing page was built using the following technologies:
-
-- 🔗 [Tailwind CSS](https://tailwindcss.com/)
-- 🔗 [Flowbite Library](https://flowbite.com/docs/getting-started/introduction/)
-- 🔗 [Flowbite Blocks](https://flowbite.com/blocks/)
-
-## About us
-
-We build free and premium themes with technologies such as Bootstrap, React, Tailwind, Vue, Laravel and more over at [Themesberg](https://themesberg.com).
-
-## License
-
-This project is open source under the MIT license.
+MIT

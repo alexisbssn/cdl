@@ -17,45 +17,30 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://alexisbuisson.ca/images/ville.jpg">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{BASE_PATH}}apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{BASE_PATH}}favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{BASE_PATH}}favicon-16x16.png">
+    <link rel="manifest" href="{{BASE_PATH}}site.webmanifest">
     <meta name="theme-color" content="#ffffff">
-    <link href="output.css" rel="stylesheet">
+    <link href="{{BASE_PATH}}output.css" rel="stylesheet">
     <style>
         @media (max-width: 430px) { .hide-lt-430 { display: none !important; } }
     </style>
 </head>
 <body>
-    <header class="fixed w-full">
-    <nav class="bg-white border-gray-200 dark:bg-gray-900 shadow-md">
-        <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto ">
-            <a href="index.html" class="flex items-center">
-                <img src="images/logo.svg" alt="logo" width="124"/>
-            </a>
-            <div class="flex items-center gap-4 lg:order-2">
-                <a href="index.html" class="text-gray-700 hover:text-purple-600 dark:text-gray-300 dark:hover:text-purple-400 font-medium">Accueil</a>
-                <a href="plateforme.html" class="text-gray-700 hover:text-purple-600 dark:text-gray-300 dark:hover:text-purple-400 font-medium">Plateforme électorale</a>
-                <a href="nouvelles.html" class="text-gray-700 hover:text-purple-600 dark:text-gray-300 dark:hover:text-purple-400 font-medium">Nouvelles et Publications</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxUwUFt16qBkQe-1TADnKkk62tz4DFwCLmsaF_JEOFinjWog/viewform?usp=header" class="hide-lt-430 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">Participez à la discussion</a>
-            </div>
-        </div>
-    </nav>
-</header>
-
+    <!-- INCLUDE: includes/header.html -->
     <section class="bg-white dark:bg-gray-900">
         <div class="grid max-w-screen-xl px-4 pt-40 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-40">
             <div class="mr-auto place-self-center lg:col-span-7">
                 <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">Bâtir ensemble <br>le Coteau-du-Lac de demain</h1>
                 <p class="max-w-2xl mb-8 font-light text-gray-500 lg:mb-10 md:text-lg lg:text-xl dark:text-gray-400">Découvrez comment les principes modernes d'urbanisme peuvent transformer notre ville en un lieu plus vivable, plus durable et plus dynamique pour tous les citoyens.</p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="plateforme.html" class="inline-flex justify-center items-center text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-base px-6 py-3 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">Plateforme électorale</a>
-                    <a href="nouvelles.html" class="inline-flex justify-center items-center text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-base px-6 py-3 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">Nouvelles et Publications</a>
+                    <a href="{{BASE_PATH}}plateforme.html" class="inline-flex justify-center items-center text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-base px-6 py-3 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">Plateforme électorale</a>
+                    <a href="{{BASE_PATH}}nouvelles.html" class="inline-flex justify-center items-center text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-base px-6 py-3 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">Nouvelles et Publications</a>
                 </div>
             </div>
             <div class="lg:mt-0 lg:col-span-5 lg:flex">
-                <img src="images/ville.jpg" alt="Vue de Coteau-du-Lac" class="rounded-lg">
+                <img src="{{BASE_PATH}}images/ville.jpg" alt="Vue de Coteau-du-Lac" class="rounded-lg">
             </div>
         </div>
     </section>
